@@ -29,6 +29,8 @@ type FormData = z.infer<typeof formSchema>
 
 export default function Signup() {
   const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [showPassword, setShowPassword] = useState(false)
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
   const router = useRouter()
   const supabase = createClient()
 
@@ -40,8 +42,7 @@ export default function Signup() {
     resolver: zodResolver(formSchema),
   })
 
-  const [showPassword, setShowPassword] = useState(false)
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+
 
   const onSubmit = async (formData: FormData) => {
     setIsLoading(true) // Set loading state
@@ -53,9 +54,10 @@ export default function Signup() {
           data: {
             full_name: formData.fullName,
           },
-          emailRedirectTo: `${window.location.origin}`,
+          emailRedirectTo: `${window.location.origin}/auth/callback`,
         },
       })
+      console.log(data)
 
       if (error) {
         console.error('Error signing up:', error.message)
