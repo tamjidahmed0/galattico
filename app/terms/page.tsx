@@ -12,7 +12,7 @@ export default function Terms() {
 
                 <section className="mb-6">
                     <h2 className="text-xl font-semibold mb-2">1. Use of Service</h2>
-                    <p>Our service is provided "as is" and "as available" without warranties of any kind. We reserve the right to modify or discontinue the service at any time without prior notice.</p>
+                    <p>Our service is provided &quot;as is&quot; and &quot;as available&quot; without warranties of any kind. We reserve the right to modify or discontinue the service at any time without prior notice.</p>
                 </section>
 
                 <section className="mb-6">
