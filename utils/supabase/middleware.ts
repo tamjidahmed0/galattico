@@ -41,10 +41,12 @@ export async function updateSession(request: NextRequest) {
   if (
     !user &&
     !request.nextUrl.pathname.startsWith('/signup') &&
-     !request.nextUrl.pathname.startsWith('/signin') &&
-    !request.nextUrl.pathname.startsWith('/auth') 
-   
- 
+    !request.nextUrl.pathname.startsWith('/signin') &&
+    !request.nextUrl.pathname.startsWith('/auth') &&
+    !request.nextUrl.pathname.startsWith('/terms') &&
+    !request.nextUrl.pathname.startsWith('/privacy-policy')
+
+
   ) {
     // no user, potentially respond by redirecting the user to the login page
     const url = request.nextUrl.clone()
@@ -54,7 +56,7 @@ export async function updateSession(request: NextRequest) {
 
 
 
-    // ✅ If LOGGED IN and trying to access /signup or /login — redirect away
+  // ✅ If LOGGED IN and trying to access /signup or /login — redirect away
   if (user && (request.nextUrl.pathname === '/signup/confirmation' || request.nextUrl.pathname === '/signup' || request.nextUrl.pathname === '/signin' || request.nextUrl.pathname === '/auth')) {
     const url = request.nextUrl.clone()
     url.pathname = '/' // or your home/dashboard page
@@ -62,7 +64,7 @@ export async function updateSession(request: NextRequest) {
   }
 
 
-  
+
 
   console.log(request.nextUrl.pathname)
 

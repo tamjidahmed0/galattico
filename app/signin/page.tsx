@@ -118,7 +118,7 @@ const SignIn = () => {
               </span>
             </div>
 
-            <GoogleSignin />
+            <GoogleSignin text='Sign in with Google' />
 
             <p className="text-center text-sm text-gray-400 mt-4">
               Don&apos;t have an account?{' '}

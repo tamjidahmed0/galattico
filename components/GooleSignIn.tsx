@@ -7,7 +7,11 @@ import { createClient } from "@/utils/supabase/client";
 import { Loader2 } from "lucide-react";
 import Image from "next/image";
 
-export default function GoogleSignin() {
+export default function GoogleSignin({
+  text
+}:{
+  text?: string;
+}) {
   const [isGoogleLoading, setIsGoogleLoading] = useState<boolean>(false);
   const supabase = createClient();
 
@@ -55,7 +59,7 @@ export default function GoogleSignin() {
           className="mr-2"
         />
       )}{" "}
-      Sign in with Google
+      {text}
     </button>
   );
 }

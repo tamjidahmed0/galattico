@@ -41,9 +41,7 @@ export default function Signup() {
   } = useForm<FormData>({
     resolver: zodResolver(formSchema),
   })
-
-
-
+  
   const onSubmit = async (formData: FormData) => {
     setIsLoading(true) // Set loading state
     try {
@@ -163,7 +161,7 @@ export default function Signup() {
               <span className="absolute bg-gray-800 px-2 text-gray-400 text-sm">Or continue with</span>
             </div>
 
-            <GoogleSignin />
+            <GoogleSignin text='Sign up with Google'/>
 
             <p className="text-center text-sm text-gray-400 mt-4">
               Already have an account?{' '}
