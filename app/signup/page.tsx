@@ -11,6 +11,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
+import Image from 'next/image'
 
 //  Zod Schema
 const formSchema = z
@@ -41,7 +42,7 @@ export default function Signup() {
   } = useForm<FormData>({
     resolver: zodResolver(formSchema),
   })
-  
+
   const onSubmit = async (formData: FormData) => {
     setIsLoading(true) // Set loading state
     try {
@@ -79,10 +80,22 @@ export default function Signup() {
   return (
     <div>
       <Suspense fallback={<Loader2 className="size-6 animate-spin" />}>
-        <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
+        <div className="min-h-dvh flex items-center justify-center bg-gray-900 text-white">
           <ToastContainer position="top-center" autoClose={3000} />
-          <div className="w-full max-w-md p-8 space-y-6 bg-gray-800 rounded-lg shadow-md">
-            <h2 className="text-2xl font-bold text-center">Create your account</h2>
+          <div className="w-full max-w-md p-8 space-y-6 lg:bg-gray-800 lg:rounded-lg lg:shadow-md">
+
+            <div className='w-full flex items-center justify-center'>
+              <div className="relative w-[180px] h-[70px] ">
+                <Image
+                  src="/galattico.png"
+                  alt="galattico ai logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </div>
+
             <p className="text-sm text-center text-gray-400">Sign up to get started</p>
 
             <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
@@ -152,20 +165,27 @@ export default function Signup() {
                 className="w-full flex items-center justify-center py-2 bg-blue-600 hover:bg-blue-700 rounded text-white font-semibold cursor-pointer"
               >
                 {isLoading ? <Loader2 className="mr-2 size-4 animate-spin" /> : null}
-                Create account
+                Sign up
               </button>
             </form>
 
             <div className="relative flex items-center justify-center my-4">
               <hr className="w-full border-gray-600" />
-              <span className="absolute bg-gray-800 px-2 text-gray-400 text-sm">Or continue with</span>
+              <span className="absolute lg:bg-gray-800 bg-gray-900 px-2 text-gray-400 text-sm">Or continue with</span>
             </div>
 
-            <GoogleSignin text='Sign up with Google'/>
+            <GoogleSignin text='Sign up with Google' />
 
             <p className="text-center text-sm text-gray-400 mt-4">
               Already have an account?{' '}
               <Link href="/signin" className="text-blue-500 underline">Sign in</Link>
+            </p>
+
+            <p className="text-sm text-center text-gray-400 mt-15">
+              By continuing, you agree to our&nbsp;
+              <Link href="/terms" className="text-blue-500 hover:underline">Terms of Use</Link>
+              &nbsp;and&nbsp;
+              <Link href="/privacy-policy" className="text-blue-500 hover:underline">Privacy Policy</Link>.
             </p>
           </div>
         </div>

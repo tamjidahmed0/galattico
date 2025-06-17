@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
 
     <div
-      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} antialiased grid grid-rows-[10%_1fr] bg-[#0d1117] h-dvh`}
     >
       <Navigation />
       {children}

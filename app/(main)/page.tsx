@@ -52,7 +52,7 @@ export default function Home() {
 
 
   return (
-    <div className="min-h-screen bg-[#0d1117] text-white">
+    <div className="text-white overflow-y-auto">
 
 
       <main className="p-8 space-y-6 lg:mx-52">

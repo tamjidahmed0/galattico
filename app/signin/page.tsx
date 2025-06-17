@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-
+import Image from 'next/image'
 
 // Zod Schema
 const schema = z.object({
@@ -60,12 +60,30 @@ const SignIn = () => {
 
   return (
     <div>
-      <Suspense fallback={<Loader2 className="size-6 animate-spin" />}>
-        <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
+      <Suspense fallback={<Loader2 className="size-6 animate-spin flex items-center justify-center" />}>
+        <div className="min-h-dvh flex items-center justify-center bg-gray-900 text-white">
           <ToastContainer position="top-center" autoClose={3000} />
-          <div className="w-full max-w-md p-8 space-y-6 bg-gray-800 rounded-lg shadow-md">
-            <h2 className="text-2xl font-bold text-center">Sign in to your account</h2>
-            <p className="text-sm text-center text-gray-400">Sign up to get started</p>
+          <div className="w-full max-w-md p-8 space-y-6 lg:bg-gray-800 lg:rounded-lg lg:shadow-md">
+
+
+            <div className='w-full flex items-center justify-center'>
+              <div className="relative w-[180px] h-[70px] ">
+                <Image
+                  src="/galattico.png"
+                  alt="galattico ai logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </div>
+
+
+
+
+
+            {/* <h2 className="text-2xl font-bold text-center">Sign in to your account</h2> */}
+            <p className="text-sm text-center text-gray-400">Sign in to get started</p>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <div>
@@ -113,7 +131,7 @@ const SignIn = () => {
 
             <div className="relative flex items-center justify-center my-4">
               <hr className="w-full border-gray-600" />
-              <span className="absolute bg-gray-800 px-2 text-gray-400 text-sm">
+              <span className="absolute bg-gray-900 lg:bg-gray-800 px-2 text-gray-400 text-sm">
                 Or continue with
               </span>
             </div>
@@ -126,6 +144,16 @@ const SignIn = () => {
                 Sign up
               </Link>
             </p>
+
+            {/* <p className='text-[12px] text-center text-gray-400'>By proceeding, you agree to our <Link href={'/terms'} className='text-blue-500'>Terms</Link> of Use and <Link href={'/privacy-policy'} className='text-blue-500'>Privacy Policy</Link>.</p> */}
+
+            <p className="text-sm text-center text-gray-400 mt-15">
+              By continuing, you agree to our&nbsp;
+              <Link href="/terms" className="text-blue-500 hover:underline">Terms of Use</Link>
+              &nbsp;and&nbsp;
+              <Link href="/privacy-policy" className="text-blue-500 hover:underline">Privacy Policy</Link>.
+            </p>
+
           </div>
         </div>
       </Suspense>

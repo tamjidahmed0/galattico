@@ -71,13 +71,13 @@ const Profile = () => {
 
 
   return (
-    <div className='bg-[#0d1117] h-dvh pt-10'>
+    <div className='overflow-y-auto pt-10'>
       <div className="max-w-3xl mx-auto bg-[#1f2937] text-white rounded-2xl p-6 shadow-lg">
            <ToastContainer position="top-center" autoClose={3000} />
         <h2 className="text-xl font-semibold mb-6">Profile Settings</h2>
 
         <div className="flex flex-col items-center gap-4">
-          {/* Avatar */}
+       
           {avatar ? (
           <Image
             src={avatar}
@@ -94,7 +94,7 @@ const Profile = () => {
 
          <h1 className="text-xl font-bold">{displayName}</h1>
 
-          {/* Display Name */}
+       
           <div className="w-full">
             <label className="text-sm mb-1 block">Display Name</label>
             <input
@@ -108,7 +108,7 @@ const Profile = () => {
             />
           </div>
 
-          {/* Email (non-editable) */}
+         
           <div className="w-full">
             <label className="text-sm mb-1 block">Email address</label>
             <input
@@ -119,7 +119,7 @@ const Profile = () => {
             />
           </div>
 
-          {/* Edit Button */}
+    
           <div className="w-full flex justify-end mt-4">
             {isEditing ? (
               <button
