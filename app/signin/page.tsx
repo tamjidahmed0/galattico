@@ -145,8 +145,7 @@ const SignIn = () => {
               </Link>
             </p>
 
-            {/* <p className='text-[12px] text-center text-gray-400'>By proceeding, you agree to our <Link href={'/terms'} className='text-blue-500'>Terms</Link> of Use and <Link href={'/privacy-policy'} className='text-blue-500'>Privacy Policy</Link>.</p> */}
-
+    
             <p className="text-sm text-center text-gray-400 mt-15">
               By continuing, you agree to our&nbsp;
               <Link href="/terms" className="text-blue-500 hover:underline">Terms of Use</Link>

@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Signup | Galattico Ai",
-  description: "Create your Galattico AI account to access powerful AI tools and personalized features. Secure and easy signup process."
+  title: "Privacy policy | Galattico Ai",
+  description: "Privacy policy | Galattico Ai",
 };
 
 export default function RootLayout({
@@ -24,13 +24,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    
-      <div
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-        
-      </div>
+
+    <div
+      className={`${geistSans.variable} ${geistMono.variable}`}
+    >
  
+      {children}
+    </div>
+
   );
 }

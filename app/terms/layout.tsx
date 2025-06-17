@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -14,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Signup | Galattico Ai",
-  description: "Create your Galattico AI account to access powerful AI tools and personalized features. Secure and easy signup process."
+  title: "Terms of Use | Galattico Ai",
+  description: "Terms of Use | Galattico Ai",
 };
 
 export default function RootLayout({
@@ -24,13 +25,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    
-      <div
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-        
-      </div>
+
+    <div
+      className={`${geistSans.variable} ${geistMono.variable}`}
+    >
  
+      {children}
+    </div>
+
   );
 }
