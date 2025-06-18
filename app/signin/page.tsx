@@ -82,8 +82,8 @@ const SignIn = () => {
 
 
 
-            {/* <h2 className="text-2xl font-bold text-center">Sign in to your account</h2> */}
-            <p className="text-sm text-center text-gray-400">Sign in to get started</p>
+          
+            <p className="text-md text-center text-gray-300">Sign in to Galattico Ai Dashboard </p>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <div>

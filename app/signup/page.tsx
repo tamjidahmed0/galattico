@@ -96,7 +96,7 @@ export default function Signup() {
               </div>
             </div>
 
-            <p className="text-sm text-center text-gray-400">Sign up to get started</p>
+            <p className="text-md text-center text-gray-300">Sign up to Galattico Ai Dashboard</p>
 
             <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
               <div>
